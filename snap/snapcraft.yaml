@@ -1,0 +1,21 @@
+name: npl-os
+base: core22
+version: '0.1'
+summary: os snap
+description: |
+  Snap for https://github.com/marceloneppel/os.
+
+grade: devel
+confinement: strict
+
+apps:
+  os:
+    command: bin/os
+
+parts:
+  os:
+    build-snaps:
+      - go
+    plugin: go
+    source: https://github.com/marceloneppel/os
+    source-type: git
